@@ -1,0 +1,576 @@
+import React, { Component } from 'react'
+import {
+  ActivityIndicator,
+  StyleSheet,
+  Text,
+  View,
+} from 'react-native'
+
+export default class App extends Component {
+  render() {
+    return (
+      <View style={[styles.container, styles.horizontal]}>
+        <ActivityIndicator size="large" color="#0000ff" />
+        <ActivityIndicator size="small" color="#00ff00" />
+        <ActivityIndicator size="large" color="#0000ff" />
+        <ActivityIndicator size="small" color="#00ff00" />
+      </View>
+    )
+  }
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center'
+  },
+  horizontal: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    padding: 10
+  }
+})
+////////////////////////////////////////////////////////////
+import React from 'react';
+import {
+  StyleSheet,
+  Button,
+  View,
+  SafeAreaView,
+  Text,
+  Alert,
+} from 'react-native';
+import Constants from 'expo-constants';
+
+function Separator() {
+  return <View style={styles.separator} />;
+}
+
+export default function App() {
+  return (
+    <SafeAreaView style={styles.container}>
+      <View>
+        <Text style={styles.title}>
+          The title and onPress handler are required. It is recommended to set
+          accessibilityLabel to help make your app usable by everyone.
+        </Text>
+        <Button
+          title="Press me"
+          onPress={() => Alert.alert('Simple Button pressed')}
+        />
+      </View>
+      <Separator />
+      <View>
+        <Text style={styles.title}>
+          Adjust the color in a way that looks standard on each platform. On
+          iOS, the color prop controls the color of the text. On Android, the
+          color adjusts the backgroud color of the button.
+        </Text>
+        <Button
+          title="Press me"
+          color="#f194ff"
+          onPress={() => Alert.alert('Button with adjusted color pressed')}
+        />
+      </View>
+      <Separator />
+      <View>
+        <Text style={styles.title}>
+          All interaction for the component are disabled.
+        </Text>
+        <Button
+          title="Press me"
+          disabled
+          onPress={() => Alert.alert('Cannot press this one')}
+        />
+      </View>
+      <Separator />
+      <View>
+        <Text style={styles.title}>
+          This layout strategy lets the title define the width of the button.
+        </Text>
+        <View style={styles.fixToText}>
+          <Button
+            title="Left button"
+            onPress={() => Alert.alert('Left button pressed')}
+          />
+          <Button
+            title="Right button"
+            onPress={() => Alert.alert('Right button pressed')}
+          />
+        </View>
+      </View>
+    </SafeAreaView>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    marginTop: Constants.statusBarHeight,
+    marginHorizontal: 16,
+  },
+  title: {
+    textAlign: 'center',
+    marginVertical: 8,
+  },
+  fixToText: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  separator: {
+    marginVertical: 8,
+    borderBottomColor: '#737373',
+    borderBottomWidth: StyleSheet.hairlineWidth,
+  },
+});
+////////////////////////////////////////////////////
+UNG DUNG DANG TAI
+import React, {Component} from 'react';
+import {ProgressBarAndroid, StyleSheet, View} from 'react-native';
+
+export default class App extends Component {
+  render() {
+    return (
+      <View style={styles.container}>
+        <ProgressBarAndroid />
+        <ProgressBarAndroid styleAttr="Horizontal" />
+        <ProgressBarAndroid styleAttr="Horizontal" color="#2196F3" />
+        <ProgressBarAndroid
+          styleAttr="Horizontal"
+          indeterminate={false}
+          progress={0.5}
+        />
+      </View>
+    );
+  }
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'space-evenly',
+    padding: 10,
+  },
+});
+///////////////////////////////////////////////////
+import React, { Component } from 'react'
+import {
+  StyleSheet,
+  TouchableHighlight,
+  Text,
+  View,
+} from 'react-native'
+
+export default class App extends Component {
+  constructor(props) {
+    super(props)
+    this.state = { count: 0 }
+  }
+
+  onPress = () => {
+    this.setState({
+      count: this.state.count+1
+    })
+  }
+
+ render() {
+    return (
+      <View style={styles.container}>
+        <TouchableHighlight
+         style={styles.button}
+         onPress={this.onPress}
+        >
+         <Text> Touch Here </Text>
+        </TouchableHighlight>
+        <View style={[styles.countContainer]}>
+          <Text style={[styles.countText]}>
+            { this.state.count !== 0 ? this.state.count: null}
+          </Text>
+        </View>
+      </View>
+    )
+  }
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    paddingHorizontal: 10
+  },
+  button: {
+    alignItems: 'center',
+    backgroundColor: '#DDDDDD',
+    padding: 10
+  },
+  countContainer: {
+    alignItems: 'center',
+    padding: 10
+  },
+  countText: {
+    color: '#FF00FF'
+  }
+})
+//////////////////////////////////////////
+TouchableOpacity
+import React, { Component } from 'react'
+import {
+  StyleSheet,
+  TouchableOpacity,
+  Text,
+  View,
+} from 'react-native'
+
+export default class App extends Component {
+  constructor(props) {
+    super(props)
+    this.state = { count: 0 }
+  }
+
+  onPress = () => {
+    this.setState({
+      count: this.state.count+1
+    })
+  }
+
+ render() {
+   return (
+     <View style={styles.container}>
+       <TouchableOpacity
+         style={styles.button}
+         onPress={this.onPress}
+       >
+         <Text> Touch Here </Text>
+       </TouchableOpacity>
+       <View style={[styles.countContainer]}>
+         <Text style={[styles.countText]}>
+            { this.state.count !== 0 ? this.state.count: null}
+          </Text>
+        </View>
+      </View>
+    )
+  }
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    paddingHorizontal: 10
+  },
+  button: {
+    alignItems: 'center',
+    backgroundColor: '#DDDDDD',
+    padding: 10
+  },
+  countContainer: {
+    alignItems: 'center',
+    padding: 10
+  },
+  countText: {
+    color: '#FF00FF'
+  }
+})
+
+////////////////////////////
+const styles = StyleSheet.create({
+  container: {
+    borderRadius: 4,
+    borderWidth: 0.5,
+    borderColor: '#d6d7da',
+  },
+  title: {
+    fontSize: 19,
+    fontWeight: 'bold',
+  },
+  activeTitle: {
+    color: 'red',
+  },
+});
+
+<View style={styles.container}>
+  <Text style={[styles.title, this.props.isActive && styles.activeTitle]} />
+</View>
+////////////////////////////////////////
+ALERT:
+import React from 'react'
+import { Alert, Text, TouchableOpacity, StyleSheet } from 'react-native'
+
+const AlertExample = () => {
+   const showAlert = () =>{
+      Alert.alert(
+         'You need to...'
+      )
+   }
+   return (
+      <TouchableOpacity onPress = {showAlert} style = {styles.button}>
+         <Text>Alert</Text>
+      </TouchableOpacity>
+   )
+}
+export default AlertExample
+
+const styles = StyleSheet.create ({
+   button: {
+      backgroundColor: '#4ba37b',
+      width: 100,
+      borderRadius: 50,
+      alignItems: 'center',
+      marginTop: 100
+   }
+})
+/////////////////////////////////////////
+123ALERT:
+//This is an example code to understand Alert// 
+import React, { Component } from 'react';
+//import react in our code. 
+import { Alert, Button, View, StyleSheet } from 'react-native';
+//import all the components we are going to use. 
+export default class App extends Component {
+  _simpleAlertHandler=()=>{
+    //function to make simple alert
+    alert('Hello I am Simple Alert');
+  }
+  _twoOptionAlertHandler=()=>{
+    //function to make two option alert
+    Alert.alert(
+      //title
+      'Hello',
+      //body
+      'I am two option alert. Do you want to cancel me ?',
+      [
+        {text: 'Yes', onPress: () => console.log('Yes Pressed')},
+        {text: 'No', onPress: () => console.log('No Pressed'), style: 'cancel'},
+      ],
+      { cancelable: false }
+      //clicking out side of alert will not cancel
+    );
+  }
+  _threeOptionAlertHandler=()=>{
+    //function to make three option alert
+    Alert.alert(
+      //title
+      'Hello',
+      //body
+      'I am three option alert. Do you want to cancel me ?',
+      [
+        {text: 'May be', onPress: () => console.log('May be Pressed')},
+        {text: 'Yes', onPress: () => console.log('Yes Pressed')},
+        {text: 'OK', onPress: () => console.log('OK Pressed')},
+      ],
+      { cancelable: true }
+    );
+  }
+  render() {
+    return (
+      <View style={styles.container}>
+        {/*To generate simple alert*/}
+        <Button title='Simple Alert' onPress={this._simpleAlertHandler}/>
+        {/*To generate two option alert*/}
+        <Button title='Alert with Two Options' onPress={this._twoOptionAlertHandler}/>
+        {/*To generate three option alert*/}
+        <Button title='Alert with Three Options' onPress={this._threeOptionAlertHandler}/>
+      </View>
+    );
+  }
+}
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#ecf0f1',
+  },
+});
+////////////////////////////
+prop:
+import React, { Component } from 'react';
+import { Text, View } from 'react-native';
+// We are making our custom component to make use of it everywhere we want 
+class MyCustomTextWith extends Component {
+  render() {
+    return (
+      <View>
+        <Text>Your First Name is {this.props.firstname}! and Last name is{' '}
+          {this.props.secondname}</Text>
+      </View>
+    );
+  }
+}
+export default class LotsOfGreetings extends Component {
+  render() {
+    return (
+      <View style={{justifyContent: 'center',alignItems: 'center', flex:1}}>
+        {/*Use of our custom component MyCustomTextWith*/}
+        <MyCustomTextWith firstname='fName1' secondname='lname1'/>
+        {/*We are setting the props dynamically from the main UI 
+           where we want to use it. We candynamically set the value 
+           using props from master every time*/}
+        <MyCustomTextWith firstname='fName2' secondname='lname2' />
+      </View>
+    );
+  }
+}
+/////////////////////////////////////////
+STATE:
+//sample Example to understand React Native State//
+import React from 'react';
+//To import the react.
+ 
+import { Text, View } from 'react-native';
+//To import all the required elements we are going to use.
+ 
+export default class App extends React.Component {
+ 
+  constructor(props) {
+    super(props);
+    // State sould be defined in constructor of class. 
+    this.state = {valx:0, valy:100000000};
+    // you can define N number of key value paires like JSON.
+    setInterval(() => {
+      this.setState({valx : this.state.valx+1});
+      this.setState({valy : this.state.valy-1});
+    }, 1000);
+    // Simple interval fundtion which will run in every second.
+    // It will increase valx and decrese valy
+  }
+ 
+  render() {
+    return (
+      <View>
+ 
+        <Text>{"Hello I am valx. I am increasing "+this.state.valx}</Text>
+        {/*// Here we have bind the state of valx with the above text.
+        // So whenever the setState called to change value of the valx
+        // Text Component will be re-render every time.
+        // valx will change in 1 Sec in our example.*/}
+ 
+        <Text>{"Hello I am valy. I am decreasing "+this.state.valy}</Text>
+        {/*// Here we have bind the state of valy with the above text.
+        // So whenever the setState called to change value of the valy
+        // Text Component will be re-render every time.
+        // valy will change in 1 Sec in our example.*/}
+ 
+      </View>
+    );
+  }
+}
+/////////////////////////////////////////////////
+textinput:
+//This is an example code to understand TextInput// 
+import React from 'react';
+//import react in our code.
+import { TextInput, View, StyleSheet, Text } from 'react-native';
+//import all the components we are going to use. 
+export default class App extends React.Component {
+ constructor(props) {
+   super(props);
+   this.state = {
+     username: ''
+   };
+ }
+ render() {
+   return (
+     <View style={styles.container}>
+       <Text style={{color: 'cyan'}}>{this.state.username}</Text>
+       <TextInput
+         value={this.state.username}
+         onChangeText={(username) => this.setState({ username })}
+         placeholder={'Username'}
+         style={styles.input}
+       />
+     </View>
+   );
+ }
+}
+const styles = StyleSheet.create({
+ container: {
+   flex: 1,
+   alignItems: 'center',
+   justifyContent: 'center',
+   backgroundColor: '#ffffff',
+ },
+ input: {
+   width: 250,
+   height: 44,
+   padding: 10,
+   marginBottom: 10,
+   backgroundColor: '#ecf0f1'
+ },
+});
+///////////////////////////////
+linking
+//This is an example of React Native click on a text link to open it in browser// 
+import React, { Component } from 'react';
+//import react in our code. 
+import { View, StyleSheet, Text, Linking } from 'react-native';
+//import all the components we are going to use.
+ 
+export default class App extends Component {
+  render() {
+    return (
+      <View style={styles.container}>
+        <Text
+          onPress={() => {
+            //on clicking we are going to open the URL using Linking
+            Linking.openURL('https://aboutreact.com');
+          }}>
+          Click Here https://aboutreact.com
+        </Text>
+      </View>
+    );
+  }
+}
+ 
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingTop: 30,
+    backgroundColor: '#ecf0f1',
+  },
+});
+//////////////////////////////////
+//This is an example code to understand ActivityIndicator// 
+import React from 'react';
+//import react in our code. 
+import { ActivityIndicator, Button, View, StyleSheet } from 'react-native';
+//import all the components we are going to use. 
+export default class App extends React.Component {
+  state = {showIndicator:false}
+  onButtonPress = () => {
+    //function to change the state to true to view activity indicator
+    this.setState({
+      showIndicator: true
+    });
+    //changing state will re-render the view and indicator will appear
+  }
+  render() {
+    //Check if showIndicator state is true the show indicator if not show button 
+    if(this.state.showIndicator){
+      return (
+        <View style={styles.container}>
+          {/*Code to show Activity Indicator*/}
+          <ActivityIndicator size="large" color="#0000ff" />
+          {/*Size can be large/ small*/}
+        </View>
+      );  
+    }else{
+      return (
+        <View style={styles.container}>
+            {/*On CLick of a button onButtonPress will bw called will change the state*/}
+          <Button onPress={this.onButtonPress} title='Click to see Indicator' />
+        </View>
+      ); 
+    }
+  } 
+}
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    flexDirection: 'column'
+  }
+});
+//////////////////////////////////

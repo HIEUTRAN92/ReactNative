@@ -1,0 +1,10 @@
+https://www.javatpoint.com/react-native-scrollview
+https://aboutreact.com/react-native-comments/
+https://khoapham.vn/khoa-hoc-lap-trinh-react-native.html
+https://facebook.github.io/react-native/docs/getting-started
+https://vntalking.com/react-native-su-dung-cac-cam-bien-sensor.html
+https://vntalking.com/dieu-huong-ung-dung-voi-react-native-navigation.html
+https://github.com/oblador/react-native-animatable
+https://www.materialui.co/flatuicolors
+https://github.com/ybq/Android-SpinKit
+https://github.com/ptomasroos/react-native-scrollable-tab-view

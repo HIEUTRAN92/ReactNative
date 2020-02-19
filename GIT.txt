@@ -1,0 +1,16 @@
+git init
+git clone 'duong/dan'
+git add .
+git commit -m "ghi chu"
+git push origin master
+git remote add origin <may chu>
+git checkout -b feature_x
+git checkout master
+git branch -d feature_x
+git push origin <nhanh>
+git pull
+git merge <nhanh>
+git add <tentaptin>
+git diff <nhanhnguon> <nhanhmuctieu>
+git config --global user.email "you@example.com"
+git config --global user.name "Your Name"

@@ -1,0 +1,16 @@
+choco install -y nodejs.install python2 jdk8
+npm install -g react-native-cli
+react-native init AwesomeProject
+>>adb devices
+List of devices attached
+emulator-5554 offline   # Google emulator
+14ed2fcc device         # Physical device
+react-native run-android
+adb reverse tcp:8081 tcp:8081
+cd AwesomeProject
+react-native run-android
+
+Google APIs
+Android SDK Platform 23
+Intel x86 Atom_64 System Image
+Google APIs Intel x86 Atom_64 System Image
