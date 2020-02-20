@@ -8,3 +8,8 @@ https://github.com/oblador/react-native-animatable
 https://www.materialui.co/flatuicolors
 https://github.com/ybq/Android-SpinKit
 https://github.com/ptomasroos/react-native-scrollable-tab-view
+////
+https://www.youtube.com/watch?v=1tgWuND9Vfg&list=PLWBrqglnjNl2yaCcp0HEAWp6zBIfingZ-
+https://github.com/sunlight3d/react_native_v0.49.git
+https://ionicons.com/
+https://simplelineicons.github.io/

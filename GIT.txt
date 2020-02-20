@@ -14,3 +14,4 @@ git add <tentaptin>
 git diff <nhanhnguon> <nhanhmuctieu>
 git config --global user.email "you@example.com"
 git config --global user.name "Your Name"
+https://git.e300.vn/mobile/xboss-mobile-messenger-old.git
